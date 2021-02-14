@@ -27,8 +27,11 @@ scala -version
 6. Make sure your ~/.bash_profile looks like below (might be different depending on your directory):
 
 ```export SPARK_HOME=/Users/dev/spark-2.4.3-bin-hadoop2.7```
+
 ```export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home```
+
 ```export SCALA_HOME=/usr/local/scala/```
+
 ```export PATH=$JAVA_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$PATH```
 
 ### How to run the project
