@@ -33,7 +33,9 @@ Our partners at the CTA have asked that I also send weather readings into Kafka 
 Finally, I needed to extract station information from our PostgreSQL database into Kafka. We've decided to use the [Kafka JDBC Source Connector](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/index.html).
 
 ### Step 4: Configure the Faust Stream Processor
-I leveraged Faust Stream Processing to transform the raw Stations table that we ingested from Kafka Connect. The raw format from the database has more data than I need, and the line color information is not conveniently configured. To remediate this, we're going to ingest data from our Kafka Connect topic, and transform the data.
+I leveraged Faust Stream Processing to transform the raw Stations table that we ingested from Kafka Connect. The raw format from the database has more data than I need, and the line color information is not conveniently configured. To remediate this, we're going to ingest data from our Kafka Connect topic, and transform the data. There is an output of Faust streaming. 
+
+![Project Architecture](images/logs.png)
 
 ### Step 5: Configure the KSQL Table
 Next, I used KSQL to aggregate turnstile data for each of our stations. Recall that when we produced turnstile data, we simply emitted an event, not a count. What would make this data more useful would be to summarize it by station so that downstream applications always have an up-to-date count
