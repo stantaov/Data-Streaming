@@ -25,10 +25,11 @@ For Macs or Linux:
 java -version
 scala -version
 6. Make sure your ~/.bash_profile looks like below (might be different depending on your directory):
-export SPARK_HOME=/Users/dev/spark-2.4.3-bin-hadoop2.7
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
-export SCALA_HOME=/usr/local/scala/
-export PATH=$JAVA_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$PATH
+
+```export SPARK_HOME=/Users/dev/spark-2.4.3-bin-hadoop2.7```
+```export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home```
+```export SCALA_HOME=/usr/local/scala/```
+```export PATH=$JAVA_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$PATH```
 
 ### How to run the project
 
@@ -38,13 +39,16 @@ Open console and run ./start.sh to setup environment.
 
 Run
 
-$ cd config
-$ /usr/bin/zookeeper-server-start zookeeper.properties
+```$ cd config```
+```$ /usr/bin/zookeeper-server-start zookeeper.properties```
+
 to initialize zookeeper.
 
 Open new console and run
-$ cd config
-$ /usr/bin/kafka-server-start server.properties
+
+```$ cd config```
+```$ /usr/bin/kafka-server-start server.properties```
+
 to initialize kafka.
 
 ### Start Kafka producer
@@ -56,7 +60,7 @@ Open new console and run python consumer_server.py to test kafka producer with a
 
 Open new console and run
 
-$ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_str
+```$ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_str```
 
 
 
