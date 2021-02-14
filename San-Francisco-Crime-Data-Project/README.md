@@ -5,7 +5,7 @@ In this project, I was provided with a real-world dataset, extracted from Kaggle
 
 ## Development Environment
 
-You may choose to create your project in the workspace we provide here, or if you wish to develop your project locally, you will need to set up your environment properly as described below:
+If you wish to develop your project locally, you will need to set up your environment properly as described below:
 
 Spark 2.4.3
 Scala 2.11.x
