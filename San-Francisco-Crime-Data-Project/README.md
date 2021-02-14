@@ -30,6 +30,37 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Hom
 export SCALA_HOME=/usr/local/scala/
 export PATH=$JAVA_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$PATH
 
+### How to run the project
+
+Initialize infrastructure (environment and kafka)
+
+Open console and run ./start.sh to setup environment.
+
+Run
+
+$ cd config
+$ /usr/bin/zookeeper-server-start zookeeper.properties
+to initialize zookeeper.
+
+Open new console and run
+$ cd config
+$ /usr/bin/kafka-server-start server.properties
+to initialize kafka.
+
+### Start Kafka producer
+
+Open new console and run python kafka_server.py to start kafka producer.
+Open new console and run python consumer_server.py to test kafka producer with a kafka consumer.
+
+### Start spark streaming
+
+Open new console and run
+
+$ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_str
+
+
+
+
 ### How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
 
 Parameters in SparkSession property allows increased and decrease throughput for exmaple "maxOffsetsPerTrigger" limits the offsets processed per trigger interval to a maximum number by default it's unlimited.
